@@ -22,13 +22,13 @@ public class ScheduleService {
     }
 
     // Get Schedule
-    public Schedule getSchedule(long id) {
+    public Schedule getSchedule(Long id) {
         Schedule foundSchedule = myScheduleRepository.findById(id).orElseThrow();
         return foundSchedule;
     }
 
     // Edit Schedule
-    public Schedule editSchedule(long id, String title, String content) {
+    public Schedule editSchedule(Long id, String title, String content) {
         Schedule editedSchedule = myScheduleRepository.findById(id).orElseThrow();
         editedSchedule.setTitle(title);
         editedSchedule.setContent(content);
@@ -37,7 +37,7 @@ public class ScheduleService {
     }
 
     // Delete Schedule
-    public boolean deleteSchedule(long id){
+    public boolean deleteSchedule(Long id){
         if(myScheduleRepository.existsById(id)) {
             myScheduleRepository.deleteById(id);
             return true;
