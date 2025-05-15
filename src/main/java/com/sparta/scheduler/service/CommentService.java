@@ -4,7 +4,9 @@ import com.sparta.scheduler.entity.Comment;
 import com.sparta.scheduler.entity.Schedule;
 import com.sparta.scheduler.repository.CommentRepository;
 import com.sparta.scheduler.repository.ScheduleRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CommentService {
 
     private CommentRepository myCommentRepository;
