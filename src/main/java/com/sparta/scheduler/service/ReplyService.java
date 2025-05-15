@@ -4,7 +4,9 @@ import com.sparta.scheduler.entity.Comment;
 import com.sparta.scheduler.entity.Reply;
 import com.sparta.scheduler.repository.CommentRepository;
 import com.sparta.scheduler.repository.ReplyRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ReplyService {
     private ReplyRepository myReplyRepository;
     private CommentRepository myCommentRepository;
@@ -34,6 +36,7 @@ public class ReplyService {
     public Reply editReply(Long id, String content) {
         Reply editedReply = myReplyRepository.findById(id).orElseThrow();
         editedReply.setContent(content);
+        editedReply = myReplyRepository.save(editedReply);
         return editedReply;
     }
 
